@@ -7,12 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  password String?
-}
-
 model Codes {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   code      String

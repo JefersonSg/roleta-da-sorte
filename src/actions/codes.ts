@@ -1,6 +1,8 @@
 'use server'
+import { PrismaClient } from "@prisma/client"
 
-import prisma from "@/lib/db"
+
+const prisma = new PrismaClient()
 
 export async function createCode(code: string, secretCode: string) {
     const secret = 'lalalaBisola123'
