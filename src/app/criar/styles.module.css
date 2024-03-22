@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 64px;
+    height: 100vh;
+    align-items: center;
+}
+
+.create_container {
+    margin-top: 64px;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.create_container div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 8px;
+}
+.create_container input {
+    height: 30px;
+    border-radius: 4px;
+}
+
+.button_create {
+    width: 70px;
+    margin: 0 auto;
+    margin-top: 16px;
+    height: 40px;
+
+}

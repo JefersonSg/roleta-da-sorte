@@ -1,0 +1,93 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    align-items: center;
+}
+.container h1 {
+  padding: 32px;
+} 
+.roleta_container {
+  display: flex;
+  justify-content: center;
+    margin-top: 32px;
+    width: 100%;
+    height: max-content;
+    min-width: 200px;
+    position: relative;
+    z-index: -1;
+}
+
+.seta {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translate(-50%,0);
+    z-index: 1000;
+}
+.roleta {
+  width: 100%;
+  height: auto;
+  min-width: 200px;
+  max-width: 550px;
+}
+
+.botao_parar {
+    width: 60px;
+    height: 40px;
+    margin-top: calc(32 - 16px);
+    cursor: pointer;
+  }
+
+.formulario {
+  margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.formulario input {
+  height: 40px;
+  padding-left: 8px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.div_input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+@keyframes rodandoSemParar {
+    0% {
+        rotate: 0deg;
+    }
+     80% {
+        rotate: 3600deg;
+    }
+
+    90% {
+        rotate: 3900deg;
+    }
+    100% {
+        rotate:  4000deg;
+    }
+}
+
+
+@media (max-width: 550px) {
+  .roleta_container {
+    margin-top: 32px;
+  }
+
+  .roleta {
+    width: 350px;
+    height: 350px;
+  }
+}
+

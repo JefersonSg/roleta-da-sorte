@@ -1,0 +1,74 @@
+.premio1 {
+    animation: premio1 5s  cubic-bezier(0.25, 1, 0.5, 1) forwards  !important;
+}
+.premio2 {
+    animation: premio2 5s  cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+.premio3 {
+    animation: premio3 5s  cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+.premio4 {
+    animation: premio4 5s  cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+.premio5 {
+    animation: premio5 5s  cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+.premio6 {
+    animation: premio6 5s  cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+
+  @keyframes premio1 {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate:  -3660deg;
+    }
+}
+@keyframes premio2 {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate:  -3720deg;
+    }
+}
+@keyframes premio3 {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate:  -3780deg;
+    }
+}
+@keyframes premio4 {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate:  -3840deg;
+    }
+}
+@keyframes premio5 {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate:  -3900deg;
+    }
+}
+@keyframes premio6 {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate:  3900deg;
+    }
+}
