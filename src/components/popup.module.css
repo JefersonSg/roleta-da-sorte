@@ -23,6 +23,14 @@
     inset 0 0 20px 4px #FF7A00, inset 0px 4px 80px 12px #FF00E5;
 	animation: enter 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) ;
 }
+.premio img {
+    scale: 1.1;
+    rotate: -5deg;
+}
+.premio.maximo {
+        border: 4px solid #D9FF81 !important;
+        box-shadow: inset 0 0 30px 6px #FF7A00, 0 4px 42px 7px #FF8A00 , inset 0 4px 50px 26px #FF8A00;
+}
 .texto {
     position: absolute;
     top: -100px;
