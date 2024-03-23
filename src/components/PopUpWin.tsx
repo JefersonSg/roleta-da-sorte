@@ -10,7 +10,7 @@ const PopUpWin = ({award, setAtivo}:{award:number, setAtivo: React.Dispatch<Reac
         }}>X</span>
         <div className={styles.premio}>
             <p className={styles.texto}>Parabens, você ganhou um prêmio!! 🎉🥳</p>
-            {award > 0 && <Image alt='imagem do premio' src={`item${award}.svg`} width={200} height={300}/>}
+             <Image alt='imagem do premio' src={`${award ? `item${award}.svg `: 'item4.svg'}`} width={200} height={300}/>
             <p className={styles.texto2}>Tire um print e #compartilhe 🥰🥰</p>
             <button className={styles.resgatar} onClick={()=>{
                 const message = encodeURIComponent(`Olá, ganhei o premio número ${award} na roleta.`)

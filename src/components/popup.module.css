@@ -83,3 +83,18 @@
         right: 40px;
     }
   }
+  @media (min-height: 700px) {
+    .premio {
+        top: 0px;
+    }
+  }
+  @media (min-height: 800px) {
+    .premio {
+        top: -30px;
+    }
+  }
+  @media (min-height: 1000px) {
+    .premio {
+        top: -100px;
+    }
+  }
