@@ -60,7 +60,7 @@ export async function checkCodeAndSetAward(code: string, name: string) {
             id: codeToUse.id
         },
         data: {
-            award: 6,
+            award: numeroSorteio,
             user: name
         }
     })
