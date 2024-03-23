@@ -15,9 +15,9 @@ export default  function Page() {
     const [code, setCode] = React.useState('')
     const [isLoading,setIsLoading] = React.useState(false)
     const [userSaved, setUserSaved] = React.useState(false)
-    const [award, setAward] = React.useState(0)
+    const [award, setAward] = React.useState(6)
     const [spin, setSpin] = React.useState(false)
-    const [startPopUp,setStartPopUp] = React.useState(false)
+    const [startPopUp,setStartPopUp] = React.useState(true)
 
     async function onSubmit() {
         if (!code || !name) {
