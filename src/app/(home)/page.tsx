@@ -54,6 +54,7 @@ export default  function Page() {
             }
         }
         if (userSaved) {
+            setIsLoading(true)
             const response: any = await reedemCode(code)
 
             if (response) {
@@ -117,7 +118,7 @@ export default  function Page() {
         {userSaved && <p>Você tem {spin ? '1' : '0'} chance</p>}
         <button className={`${styles.botao_parar} ${isLoading ? styles.loading : ''}`} onClick={()=>{
             setParar(!parar)
-        }}>{spin ? 'Girar' : isLoading ? 'Resgatando...' : 'Resgatar'}</button>
+        }}>{spin && isLoading ? 'Aguarde...' : spin ? 'Girar' : isLoading ? 'Aguarde...' : 'Resgatar'}</button>
         {message && <p>{message}</p>}
         </form>
         {startPopUp && <PopUpWin award={award} setAtivo={setStartPopUp}/>}
