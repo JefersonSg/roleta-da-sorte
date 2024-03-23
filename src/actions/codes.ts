@@ -53,7 +53,7 @@ export async function checkCodeAndSetAward(code: string, name: string) {
         return {error: 'Codigo já resgatado'}
     }
 
-    const numeroSorteio = Math.floor(Math.random() * 10) + 1
+    const numeroSorteio = Math.floor(Math.random() * 15) + 1
 
    const data = await prisma.codes.update({
         where: {
