@@ -49,11 +49,11 @@ export async function checkCodeAndSetAward(code: string, name: string) {
         }
     }
 
-    if (  codeToUse.used || codeToUse?.user && codeToUse?.user?.length > 0 || codeToUse.award && codeToUse?.award > 0) {
+    if (  codeToUse.used ) {
         return {error: 'Codigo já resgatado'}
     }
 
-    const numeroSorteio = Math.floor(Math.random() * 15) + 1
+    const numeroSorteio = Math.floor(Math.random() * 13) + 1
 
    const data = await prisma.codes.update({
         where: {

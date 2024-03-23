@@ -77,3 +77,9 @@
         transform: scale(1);
     }
   }
+  @media (max-width: 550px) {
+    .fechar {
+        top: 20px;
+        right: 40px;
+    }
+  }

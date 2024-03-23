@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import styles from './Page.module.css'
-import React from 'react';
+import React, { Suspense } from 'react';
 import { checkCodeAndSetAward, reedemCode } from '@/actions/codes';
 import './style.css'
 import Ganhadores from '@/components/ganhadores';
@@ -21,7 +21,6 @@ export default  function Page() {
 
     async function onSubmit() {
         if (!code || !name) {
-            
             return setMessage('Preencha todos os campos')
         }
 
@@ -33,6 +32,7 @@ export default  function Page() {
             if (response.message) {
                 setMessage(response.message)
                 setUserSaved(true)
+                setIsLoading(false)
                 setSpin(true)
                 return
             }
@@ -42,8 +42,11 @@ export default  function Page() {
                 setSpin(false)
                 return setMessage(response.error)
             }
-            
+            if (!response) {
             setIsLoading(false)
+                
+            }
+            
             } catch (error) {
                 setIsLoading(false)
                 setMessage('Erro ao resgatar o codigo')
@@ -82,7 +85,14 @@ export default  function Page() {
         <div className={styles.roleta_container}>
         <Image className={styles.seta} alt='Seta da roleta' src={'/seta_roleta.svg'} width={25} height={70}/>
 
-        <Image className={`${styles.roleta} ${award > 0 ? 'premio'+award : ''}`} alt='Roleta' src={'/Roleta4.svg'} width={500} height={500}/>
+        <Suspense>
+        <Image placeholder='empty' 
+        className={`${styles.roleta}
+        ${userSaved ? '' : styles.rodando}
+        ${award > 0 ? 'premio'+ award : ''}`} 
+        alt='Roleta' src={'/Roleta4.svg'} width={500}
+        height={500}/>
+        </Suspense>
         </div>
         <form action="" className={styles.formulario} onSubmit={(e)=>{
             e.preventDefault()
@@ -105,12 +115,14 @@ export default  function Page() {
         </>
         }
         {userSaved && <p>Você tem {spin ? '1' : '0'} chance</p>}
-        <button className={styles.botao_parar} onClick={()=>{
+        <button className={`${styles.botao_parar} ${isLoading ? styles.loading : ''}`} onClick={()=>{
             setParar(!parar)
-        }}>{spin ? 'Girar' : 'Resgatar'}</button>
+        }}>{spin ? 'Girar' : isLoading ? 'Resgatando...' : 'Resgatar'}</button>
         {message && <p>{message}</p>}
         </form>
         {startPopUp && <PopUpWin award={award} setAtivo={setStartPopUp}/>}
+        <Suspense>
         <Ganhadores />
+        </Suspense>
         </main>;
 }
