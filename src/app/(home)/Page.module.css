@@ -1,35 +1,34 @@
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100vh;
-    align-items: center;
-    background-color: black;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  align-items: center;
 }
 .container h1 {
   padding: 32px;
-} 
+}
 .roleta_container {
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
-    width: 100%;
-    height: max-content;
-    min-width: 200px;
-    position: relative;
-    z-index: -1;
-    margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  width: 100%;
+  height: max-content;
+  min-width: 200px;
+  position: relative;
+  z-index: -1;
+  margin-bottom: 16px;
 }
 
 .seta {
-    position: absolute;
-    left: 50%;
-    top: -10px;
-    transform: translate(-50%,0);
-    z-index: 1000;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translate(-50%, 0);
+  z-index: 1000;
 }
 .roleta {
   width: 100%;
@@ -37,7 +36,7 @@
   min-width: 200px;
   max-width: 550px;
   rotate: 0deg;
-  transition: all .5s;
+  transition: all 0.5s;
   border-radius: 50%;
 }
 .roleta.rodando {
@@ -54,35 +53,36 @@
   max-width: 550px;
   border-radius: 9999px;
   background: transparent;
-  border: 5px solid #D9FF81;
+  border: 5px solid #d9ff81;
   z-index: -1;
   transform: translate(-50%, -50%);
   animation: neon-border 1.5s infinite alternate;
-  transition: all .5s;
-  box-shadow: 0 0 10px 2px #FF7A00 , 
-  inset 0 0 20px 6px #FF7A00 ,
-   0 4px 25px 8px #FF8A00, 
-   inset 0 4px 25px 8px #FF8A00;
+  transition: all 0.5s;
+  box-shadow:
+    0 0 10px 2px #ff7a00,
+    inset 0 0 20px 6px #ff7a00,
+    0 4px 25px 8px #ff8a00,
+    inset 0 4px 25px 8px #ff8a00;
 }
 .botao_parar {
-    min-width: 60px;
-    width: max-content;
-    max-width: max-content;
-    height: 40px;
-    margin-top: calc(32 - 16px);
-    cursor: pointer;
-  }
-  .botao_parar.loading {
-    pointer-events: none;
-    opacity: 0.7;
-  }
+  min-width: 60px;
+  width: max-content;
+  max-width: max-content;
+  height: 40px;
+  margin-top: calc(32 - 16px);
+  cursor: pointer;
+}
+.botao_parar.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
 
 .formulario {
   margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 .formulario input {
   height: 40px;
@@ -99,13 +99,13 @@
 }
 
 @keyframes rodandoSemParar {
-    0% {
-        rotate: 0deg;
-    }
+  0% {
+    rotate: 0deg;
+  }
 
-    100% {
-        rotate:  3600deg;
-    }
+  100% {
+    rotate: 3600deg;
+  }
 }
 /* @keyframes neon-border {
   0% {
@@ -142,7 +142,7 @@
   .roleta_container {
     margin-top: 16px;
   }
-  .roleta_container::after { 
+  .roleta_container::after {
     width: 350px;
   }
   .roleta {
@@ -154,4 +154,3 @@
     padding-bottom: 16px;
   }
 }
-

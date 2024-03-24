@@ -1,72 +1,71 @@
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    padding-top: 64px;
-    height: 100vh;
-    align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 64px;
+  height: 100vh;
+  align-items: center;
 }
 .roleta_container {
-    margin-top: 64px;
-    width: max-content;
-    height: max-content;
-    position: relative;
+  margin-top: 64px;
+  width: max-content;
+  height: max-content;
+  position: relative;
 }
 
 .seta {
-    position: absolute;
-    left: 50%;
-    top: -10px;
-    transform: translate(-50%,0);
-    z-index: 1000;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translate(-50%, 0);
+  z-index: 1000;
 }
 .roleta {
-    animation: rodandoSemParar 5s  linear forwards;
+  animation: rodandoSemParar 5s linear forwards;
 }
 
 .roleta.parado {
-    animation: pararGirar 3s ease forwards;
-  }
-  .botao_parar {
-    width: 60px;
-    height: 40px;
-    margin-top: calc(64px - 16px);
-    cursor: pointer;
-  }
+  animation: pararGirar 3s ease forwards;
+}
+.botao_parar {
+  width: 60px;
+  height: 40px;
+  margin-top: calc(64px - 16px);
+  cursor: pointer;
+}
 .formulario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 @keyframes rodandoSemParar {
-    0% {
-        rotate: 0deg;
-    }
-     80% {
-        rotate: 3600deg;
-    }
+  0% {
+    rotate: 0deg;
+  }
+  80% {
+    rotate: 3600deg;
+  }
 
-    90% {
-        rotate: 3900deg;
-    }
-    100% {
-        rotate:  4000deg;
-    }
+  90% {
+    rotate: 3900deg;
+  }
+  100% {
+    rotate: 4000deg;
+  }
 }
 
 @keyframes pararGirar {
-    0% {
-      transform: rotate(0); /* Mantenha a rotação inicial */
-    }
-    50% {
-      transform: rotate(180deg); /* Reduza a rotação pela metade */
-    }
-    100% {
-      transform: rotate(180deg); /* Mantenha a rotação constante */
-    }
+  0% {
+    transform: rotate(0); /* Mantenha a rotação inicial */
   }
-
+  50% {
+    transform: rotate(180deg); /* Reduza a rotação pela metade */
+  }
+  100% {
+    transform: rotate(180deg); /* Mantenha a rotação constante */
+  }
+}
