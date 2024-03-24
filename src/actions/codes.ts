@@ -39,7 +39,7 @@ export async function createCode(code: string, secretCode: string) {
 export async function checkCodeAndSetAward(code: string, name: string) {
   const codeToUse = await prisma.codes.findFirst({
     where: {
-      code: code
+      code
     }
   });
   if (!codeToUse) {
@@ -54,7 +54,7 @@ export async function checkCodeAndSetAward(code: string, name: string) {
 
   const numeroSorteio = Math.floor(Math.random() * 15) + 1;
 
-  const data = await prisma.codes.update({
+  await prisma.codes.update({
     where: {
       id: codeToUse.id
     },
@@ -69,7 +69,7 @@ export async function checkCodeAndSetAward(code: string, name: string) {
 export async function reedemCode(code: string) {
   const codeToUse = await prisma.codes.findFirst({
     where: {
-      code: code
+      code
     }
   });
 

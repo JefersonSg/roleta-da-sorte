@@ -21,7 +21,8 @@ export default function Page() {
 
   async function onSubmit() {
     if (!code || !name) {
-      return setMessage('Preencha todos os campos');
+      setMessage('Preencha todos os campos');
+      return;
     }
 
     if (code && !isLoading && !userSaved) {
@@ -40,7 +41,8 @@ export default function Page() {
           setIsLoading(false);
           setUserSaved(false);
           setSpin(false);
-          return setMessage(response.error);
+          setMessage(response.error);
+          return;
         }
         if (!response) {
           setIsLoading(false);
@@ -106,7 +108,7 @@ export default function Page() {
         className={styles.formulario}
         onSubmit={(e) => {
           e.preventDefault();
-          onSubmit();
+          void onSubmit();
         }}
       >
         {!userSaved && (

@@ -11,7 +11,8 @@ const FormCreate = () => {
   const [message, setMessage] = React.useState('');
   async function handleSubmit() {
     if (!newCode || !secret) {
-      return setMessage('Preencha todos os campos');
+      setMessage('Preencha todos os campos');
+      return;
     }
     if (!isLoading) {
       setMessage('');
@@ -41,7 +42,7 @@ const FormCreate = () => {
       className={styles.create_container}
       onSubmit={(e) => {
         e.preventDefault();
-        handleSubmit();
+        void handleSubmit();
       }}
     >
       <div>
