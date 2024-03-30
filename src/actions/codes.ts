@@ -52,14 +52,25 @@ export async function checkCodeAndSetAward(code: string, name: string) {
     return { error: 'Codigo já resgatado' };
   }
 
-  const numeroSorteio = Math.floor(Math.random() * 15) + 1;
+  const numeroSorteio = Math.floor(Math.random() * 100) + 1;
+
+  const premio =
+    numeroSorteio <= 31
+      ? 1
+      : numeroSorteio > 31 && numeroSorteio < 61
+        ? 2
+        : numeroSorteio > 61 && numeroSorteio < 71
+          ? 3
+          : numeroSorteio > 71 && numeroSorteio < 81
+            ? 4
+            : 5;
 
   await prisma.codes.update({
     where: {
       id: codeToUse.id
     },
     data: {
-      award: numeroSorteio,
+      award: premio ?? 1,
       user: name
     }
   });
